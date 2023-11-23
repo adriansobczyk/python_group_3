@@ -26,4 +26,4 @@ def overview_functions():
     print(overview_functions.__doc__)  # Wyświetlenie dokumentacji funkcji
 
 # Wywołanie funkcji omówieniowej
-overview_functions()
+# overview_functions()
