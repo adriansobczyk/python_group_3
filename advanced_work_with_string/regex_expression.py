@@ -87,7 +87,7 @@ def sample_regex_to_extract_second_word():
         return None
 
 
-def sample_regex_to_extract_words_with_n_letters(n):
+def sample_regex_to_extract_n_word(n):
     """
     Przykład użycia wyrażeń regularnych do wyszukania słów z 4 literami.
     Użyte zostały następujące znaki specjalne:
@@ -96,10 +96,12 @@ def sample_regex_to_extract_words_with_n_letters(n):
     {n} - dokładnie n wystąpienia poprzedniego znaku
     """
     input_text = "Wyrażenia regularne to bardzo przydatny element w Pythonie."
-    pattern = r'\b\w{' + str(n) + r'}\b'
-    matches = re.findall(pattern, input_text)
-
-    return matches
+    words = re.findall(r'\b\w+\b', input_text)
+    
+    if n <= 0 or n > len(words):
+        return None  # Return None if n is out of range
+    
+    return words[n - 1]
 
 def sample_regex_to_extract_integers_only():
     """
@@ -178,7 +180,7 @@ def sample_regex_to_replace_multiple_elements():
     # print(sample_regex_find_digits())
     # print(sample_regex_to_search_date())
     # print(sample_regex_to_extract_second_word())
-    # print(sample_regex_to_extract_words_with_n_letters(2))
+    # print(sample_regex_to_extract_n_word(4))
     # print(sample_regex_to_extract_integers_only())
     # print(sample_regext_to_extract_text_after_2_word())
     # print(sample_regex_to_replace_1_element())
