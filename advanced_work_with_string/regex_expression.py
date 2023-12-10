@@ -99,7 +99,7 @@ def sample_regex_to_extract_n_word(n):
     words = re.findall(r'\b\w+\b', input_text)
     
     if n <= 0 or n > len(words):
-        return None  # Return None if n is out of range
+        return None
     
     return words[n - 1]
 
