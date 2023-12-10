@@ -54,18 +54,18 @@ def sample_vertical_tab():
     return string_with_vertical_tab
 
 
-# def save_functions_output_to_file(filename):
-#     with open(filename, 'w') as file:
-        # file.write(sample_new_line() + '\n')
-        # file.write(sample_new_page() + '\n')
-        # file.write(sample_carriage_return() + '\n')
-        # file.write(sample_tab() + '\n')
-        # file.write(sample_backspace() + '\n')
-        # file.write(sample_vertical_tab() + '\n')
+def save_functions_output_to_file(filename):
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(sample_new_line() + '\n')
+        file.write(sample_new_page() + '\n')
+        file.write(sample_carriage_return() + '\n')
+        file.write(sample_tab() + '\n')
+        file.write(sample_backspace() + '\n')
+        file.write(sample_vertical_tab() + '\n')
 
 
-if __name__ == '__main__':
-    print(sample_new_line())
+# if __name__ == '__main__':
+    # print(sample_new_line())
     # print(sample_new_page())
     # print(sample_carriage_return())
     # print(sample_tab())

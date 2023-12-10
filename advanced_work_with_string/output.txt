@@ -1,0 +1,7 @@
+To jest przykład stringa z nową linią.
+To jest druga linia.
+To jest przykładstringa z nową stroną
+To jest przykładstringa z powrotem karetki
+To jest przykład	stringa z tabulatorem
+To jest przykładstringa z backspace
+To jest przykładstringa z pionową tabulacją

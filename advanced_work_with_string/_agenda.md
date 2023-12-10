@@ -29,6 +29,19 @@
 - Usuwanie początkowych i końcowych białych znaków za pomocą `strip`, `lstrip` i `rstrip`.
 - Zastępowanie podciągów przy użyciu metody `replace`.
 
-### 4. Więcej Opcji Tworzenia Stringów
+#### 4. Więcej Opcji Tworzenia Stringów
 
-- Eksploracja zaawansowanych metod tworzenia stringów.
+* Eksploracja zaawansowanych metod tworzenia stringów.
+
+#### **5. Translate**
+
+* Czym jest metoda translate i do czego jej używać
+
+#### **6. Formatowanie ciągów znaków (metajęzyk formatowania)**
+
+* Wprowadzenie do metajęzyka formatowania ciągów znaków w Pythonie.
+
+#### **7. Wyrażenia Regularne**
+
+* Zastosowanie wyrażeń regularnych w Pythonie przy użyciu modułu `re`.
+* Funkcje takie jak `search`, `findall`, `sub` do manipulacji tekstami przy użyciu wzorców.
