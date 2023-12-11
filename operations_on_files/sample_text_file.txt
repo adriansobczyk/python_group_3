@@ -1,0 +1,4 @@
+W programowaniu Python to potężny język.
+Funkcje w Pythonie umożliwiają strukturyzację kodu.
+Obsługa plików w Pythonie jest prosta i wygodna.
+Tekstowy plik to podstawowy rodzaj pliku.

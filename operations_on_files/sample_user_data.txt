@@ -1,0 +1,3 @@
+Imię: Jan
+Nazwisko: Kowalski
+Nickname: jkowalski
