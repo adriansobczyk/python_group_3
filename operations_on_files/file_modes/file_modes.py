@@ -11,36 +11,41 @@ x - exclusive creation (ekskluzywne tworzenie) - otwiera plik do zapisu, jeśli 
 
 def sample_read_file():
     '''
-    Funkcja otwiera plik sample.txt, który znajduje się w tym samym katalogu co plik intro.py
+    Funkcja otwiera plik sample.txt.
     '''
-    f = open('sample.txt', 'r')
+    f = open(r'file_modes/sample.txt', 'r', encoding='utf-8')
     print(f.read())
     f.close()
 
 
 def sample_write_file():
     '''
-    Funkcja otwiera oraz zapisuje do pliku sample.txt, który znajduje się w tym samym katalogu co plik intro.py
+    Funkcja otwiera oraz zapisuje do pliku sample.txt oraz zwraca liczbę zapisanych znaków (w tym przypadku 18).
     '''
-    f = open('sample.txt', 'w')
-    f.write('Hello World! Write')
-    f.close()
+    # Bez używania menadżera kontekstu
+    # f = open('file_modes/sample.txt', 'w')
+    # f.write('Hello World! Write')
+    # f.close()
+
+    # Z menadżerem kontekstu - with
+    with open(r'file_modes/sample.txt', 'w', encoding='utf-8') as f:
+        print(f.write('Hello World! Write'))
 
 
 def sample_append_file():
     '''
-    Funckcja otwiera oraz dopisuje do pliku sample.txt, który znajduje się w tym samym katalogu co plik intro.py
+    Funckcja otwiera oraz dopisuje do pliku sample.txt oraz dodaje nową linię.
     '''
-    f = open('sample.txt', 'a')
+    f = open(r'file_modes/sample.txt', 'a')
     f.write('\nHello World! Append')
     f.close()
 
 
 def sample_read_write_file():
     '''
-    Funkcja otwiera plik sample.txt, który znajduje się w tym samym katalogu co plik intro.py
+    Funkcja otwiera plik sample.txt oraz zapisuje do niego linię tekstu.
     '''
-    f = open('sample.txt', 'r+')
+    f = open(r'file_modes/sample.txt', 'r+')
     print(f.read())
     f.write('\nHello World! Read Write')
     f.close()
@@ -48,9 +53,9 @@ def sample_read_write_file():
 
 def sample_write_read_file():
     '''
-    Otwieramy plik sample.txt, który znajduje się w tym samym katalogu co plik intro.py. Jeśli plik nie istnieje to go utworzy. Jeśli istnieje to go skasuje.
+    Otwieramy plik sample.txtJeśli plik nie istnieje to go utworzy. Jeśli istnieje to go skasuje.
     '''
-    f = open('sample.txt', 'w+')
+    f = open(r'file_modes/sample.txt', 'w+')
     f.write('Hello World! Write Read')
     print(f.read())
     f.close()
@@ -58,9 +63,9 @@ def sample_write_read_file():
 
 def sample_append_read_file():
     '''
-    Funkcja otwiera plik sample.txt, który znajduje się w tym samym katalogu co plik intro.py. Jeśli plik nie istnieje to go utworzy.
+    Funkcja otwiera plik sample.txt Jeśli plik nie istnieje to go utworzy.
     '''
-    f = open('sample.txt', 'a+')
+    f = open(r'file_modes/sample.txt', 'a+')
     f.write('\nHello World! Append Read')
     print(f.read())
     f.close()
@@ -68,17 +73,16 @@ def sample_append_read_file():
 
 def sample_exclusive_creation_file():
     '''
-    Funkcja otwiera plik sample.txt, który znajduje się w tym samym katalogu co plik intro.py. Jeśli plik nie istnieje to go utworzy. Jeśli istnieje to zwróci błąd.
+    Funkcja otwiera plik sample.txt. Jeśli plik nie istnieje to go utworzy. Jeśli istnieje to zwróci błąd.
     '''
-    f = open('sample.txt', 'x')
+    f = open(r'file_modes/sample_two.txt', 'x')
     f.write('Hello World! Exclusive Creation')
     f.close()
 
 
-
-# if __name__ == '__main__':
+if __name__ == '__main__':
     # sample_read_file()
-    # sample_write_file()
+    sample_write_file()
     # sample_append_file()
     # sample_read_write_file()
     # sample_write_read_file()

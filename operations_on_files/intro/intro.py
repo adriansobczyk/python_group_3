@@ -18,34 +18,51 @@ move - przeniesienie pliku
 ren - zmiana nazwy pliku
 . - katalog bieżący
 .. - katalog nadrzędny
+
+Komendy w terminalu (Linux):
+cd - zmiana katalogu
+ls - wyświetlenie zawartości katalogu
+mkdir - utworzenie katalogu
+rmdir - usunięcie katalogu
+rm - usunięcie pliku
+cp - kopiowanie pliku
+mv - przeniesienie pliku
+mv - zmiana nazwy pliku
+. - katalog bieżący
+.. - katalog nadrzędny
+
+W Pythonie deskryptory plików są obiektami, które reprezentują otwarty plik. Deskryptory plików są używane do interakcji z plikami, zarówno do odczytu, jak i do zapisu danych. 
+W Pythonie deskryptory plików są zazwyczaj uzyskiwane przez funkcję open(), która otwiera plik i zwraca obiekt deskryptora pliku.
+Podstawowe operacje, które można wykonywać za pomocą deskryptorów plików w Pythonie, 
+to czytanie (read()), pisanie (write()), przesuwanie wskaźnika pozycji (seek()), zamykanie pliku (close()), sprawdzanie pozycji wskaźnika (tell()), itp.
 '''
 
 def sample_txt_file():
     '''
     Otwieramy plik sample.txt, który znajduje się w tym samym katalogu co plik intro.py
     '''
-    f = open('sample.txt', 'r')
+    f = open(r'intro/sample.txt') # nazwa folderu i pliku, r - raw string (nie interpretuje znaków specjalnych)
     print(f.read())
     f.close()
 
 
-def read_file_operations(file_name='text.txt'):
+def read_file_operations(file_name=r'intro/sample.txt'):
     '''
     Otwieramy plik text.txt, który znajduje się w tym samym katalogu co plik intro.py
     '''
-    with open(file_name, 'r', encoding='utf-8') as file:
+    with open(file_name, 'r', encoding='utf-8') as f:
         # Odczytanie zawartości pliku
-        content = file.read()
+        content = f.read()
         print("Zawartość pliku:", content)
 
         # Przesunięcie wskaźnika pozycji na początek pliku
-        file.seek(0)
+        f.seek(0)
 
         # Odczytanie kolejnych trzech znaków
-        partial_content = file.read(3)
+        partial_content = f.read(2)
         print("Pierwsze trzy znaki:", partial_content)
 
 
 if __name__ == '__main__':
-    # sample_txt_file()
-    read_file_operations()
+    sample_txt_file()
+    # read_file_operations()

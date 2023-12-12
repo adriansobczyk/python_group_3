@@ -2,7 +2,7 @@
 import re
 
 
-def create_txt_with_int_and_calculate_sum(file_path='numbers.txt'):
+def create_txt_with_int_and_calculate_sum(file_path=r'sample_functions/numbers.txt'):
     '''
     Funkcja tworzy plik numbers.txt, który znajduje się w tym samym katalogu co plik intro.py
     Następnie zapisuje do niego liczby całkowite od 1 do 100.
@@ -20,7 +20,7 @@ def create_txt_with_int_and_calculate_sum(file_path='numbers.txt'):
     print(f"Sum: {sum}")
 
 
-def create_file_with_info(file_path='sample_user_data.txt', name='Jan', surname='Kowalski', nickname='jkowalski'):
+def create_file_with_info(file_path=r'sample_functions/sample_user_data.txt', name='Jan', surname='Kowalski', nickname='jkowalski'):
     '''
     Funkcja tworzy plik sample_user_data.txt, który znajduje się w tym samym katalogu co plik intro.py
     Następnie zapisuje do niego informacje o użytkowniku.
@@ -38,7 +38,7 @@ def create_file_with_info(file_path='sample_user_data.txt', name='Jan', surname=
             file.close()
 
 
-def read_file_to_list(file_path='sample_user_data.txt'):
+def read_file_to_list(file_path=r'sample_functions/sample_user_data.txt'):
     result = []
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -54,7 +54,10 @@ def read_file_to_list(file_path='sample_user_data.txt'):
     return result
 
 
-def read_file_to_dict(file_path='sample_user_data.txt'):
+def read_file_to_dict(file_path=r'sample_functions/sample_user_data.txt'):
+    '''
+    Funkcja odczytuje plik i zwraca słownik z danymi użytkownika.
+    '''
     result_dict = {}
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -69,23 +72,7 @@ def read_file_to_dict(file_path='sample_user_data.txt'):
         print(f"Wystąpił błąd podczas odczytu pliku: {e}")
     return result_dict
 
-
-def write_dict_to_file(file_path='same_dict.txt', input_dict={'key1': 'value1', 'key2': 'value2'}):
-    '''
-    Funkcja zapisuje słownik do pliku w formacie:
-    key1: value1
-    key2: value2
-    '''
-    try:
-        with open(file_path, 'w') as file:
-            for key, value in input_dict.items():
-                file.write(f"{key}: {value}\n")
-        print("Słownik został zapisany do pliku.")
-    except Exception as e:
-        print(f"Wystąpił błąd podczas zapisywania do pliku: {e}")
-
-
-def read_keys_from_file(file_path='sample_user_data.txt'):
+def read_keys_from_file(file_path=r'sample_functions/sample_user_data.txt'):
     keys_list = []
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -98,7 +85,10 @@ def read_keys_from_file(file_path='sample_user_data.txt'):
         return None
 
 
-def read_values_from_file(file_path='sample_user_data.txt'):
+def read_values_from_file(file_path=r'sample_functions/sample_user_data.txt'):
+    '''
+    Funkcja odczytuje plik i zwraca listę wartości.
+    '''
     values_list = []
     try:
         with open(file_path, 'r') as file:
@@ -111,22 +101,15 @@ def read_values_from_file(file_path='sample_user_data.txt'):
         return None
 
 
-def create_and_extract_sentences():
-    # Tworzenie pliku z przykładowym tekstem
-    with open('python_text.txt', 'w') as file:
-        file.write(
-            "Python is a powerful programming language.\n"
-            "It is widely used for web development.\n"
-            "On the other hand python is a snake."
-            )
-
-    # Odczyt tekstu z pliku
-    with open('Python.txt', 'r') as file:
+def extract_sentences():
+    '''
+    Funkcja wyszukuje wszystkie zdania zawierające słowo "Python" lub "python" w pliku python.txt.
+    Następnie wydrukuje wyniki.
+    '''
+    with open(r'sample_functions/python_text.txt', 'r') as file:
         text = file.read()
-
     # Wyrażenie regularne do wyszukiwania wszystkich zdań zawierających "Python" lub "python"
     sentences_pattern = re.compile(r'[^.]*\bPython\b[^.]*\.|[^.]*\bpython\b[^.]*\.')
-
     # Wyszukiwanie i wydruk wyniku
     matches = sentences_pattern.findall(text)
     if matches:
@@ -143,7 +126,7 @@ def find_words_in_file_in_text():
     Następnie wydrukuje wyniki.
     '''
     # Pobieranie ścieżki do pliku z listą słów od użytkownika
-    words_file_path = input("Podaj ścieżkę do pliku z listą słów: ")
+    words_file_path = input("Podaj ścieżkę do pliku z listą słów: ") # sample_functions/sample_list_of_words.txt
 
     # Otwieranie pliku z listą słów
     with open(words_file_path, 'r') as words_file:
@@ -151,7 +134,7 @@ def find_words_in_file_in_text():
         words_list = words_file.read().split()
 
     # Pobieranie ścieżki do pliku z tekstem od użytkownika
-    text_file_path = input("Podaj ścieżkę do pliku z tekstem: ")
+    text_file_path = input("Podaj ścieżkę do pliku z tekstem: ") # sample_functions/sample_text_file.txt
 
     # Otwieranie pliku z tekstem
     with open(text_file_path, 'r') as text_file:
@@ -173,7 +156,7 @@ def find_words_in_file_in_text():
         print(f"Słowo '{word}' występuje {count} razy.")
 
 
-def sample_function_with_two_files(sample_file_source='sample_text_file.txt', sample_file_ouput='sample_user_data_copy.txt'):
+def sample_function_with_two_files(sample_file_source=r'sample_functions/sample_text_file.txt', sample_file_ouput=r'sample_functions/sample_text_file_copy.txt'):
     '''
     Funkcja odczytuje plik źródłowy i zapisuje do pliku wyjściowego
     '''
@@ -186,42 +169,13 @@ def sample_function_with_two_files(sample_file_source='sample_text_file.txt', sa
         print(f"Wystąpił błąd: {e}")
 
 
-def dict_to_list(input_filename='sample_user_data.txt'):
-    """
-    Konwertuje zawartość pliku słownikowego na listę par klucz-wartość.
-    """
-    with open(input_filename, 'r', encoding='utf-8') as file:
-        input_dict = {}
-        for line in file:
-            key, value = line.strip().split(': ')
-            input_dict[key] = value
-
-    output_filename = f'{input_filename.replace(".txt", "")}_output.txt'
-    output_list = list(input_dict.items())
-
-    with open(output_filename, 'w', encoding='utf-8') as output_file:
-        output_file.write('[\n')
-        output_file.write('\n'.join([f'    {key}, {value},\n' for key, value in output_list]))
-        for key, value in output_list:
-            output_file.write(f'    [{key}, {value}],\n')
-        output_file.write(']\n')
-    # with open(output_filename, 'w', encoding='utf-8') as output_file:
-    #     output_file.write('[' + ', '.join([f'{key}, {value}' for key, value in output_list]) + ']\n')
-    # with open(output_filename, 'w', encoding='utf-8') as output_file:
-    #     formatted_output = '[' + ', '.join([f'[{key}, {value}]' for key, value in output_list]) + ']'
-    #     output_file.write(formatted_output)
-    return output_list
-
-
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # create_txt_with_int_and_calculate_sum()
     # create_file_with_info()
     # print(read_file_to_list())
     # print(read_file_to_dict())
-    # write_dict_to_file()
     # print(read_keys_from_file())
     # print(read_values_from_file())
-    # create_and_extract_sentences()
+    # extract_sentences()
     # find_words_in_file_in_text()
     # sample_function_with_two_files()
-    print(dict_to_list())
