@@ -15,8 +15,3 @@ def czytaj_plik_open(sciezka=r'context_manager/sample_user_data.txt'):
     finally:
         plik.close()
     # Plik zostanie zamknięty po zakończeniu bloku try-finally
-
-
-if __name__ == '__main__':
-    read_file_with_open()
-    czytaj_plik_open()

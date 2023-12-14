@@ -61,8 +61,3 @@ def read_file_operations(file_name=r'intro/sample.txt'):
         # Odczytanie kolejnych trzech znaków
         partial_content = f.read(2)
         print("Pierwsze trzy znaki:", partial_content)
-
-
-if __name__ == '__main__':
-    sample_txt_file()
-    # read_file_operations()
