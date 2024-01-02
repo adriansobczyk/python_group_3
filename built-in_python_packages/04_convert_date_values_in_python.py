@@ -18,6 +18,10 @@ def convert_date_to_string(data_godzina, format='%Y-%m-%d %H:%M:%S'):
     """
     return data_godzina.strftime(format)
 
+data = datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0)
+data_jako_str = convert_date_to_string(data)
+print(f"Data jako ciąg znaków: {data_jako_str}")
+
 
 def convert_string_to_date(ciag_znakow, format='%Y-%m-%d %H:%M:%S'):
     """
@@ -31,6 +35,10 @@ def convert_string_to_date(ciag_znakow, format='%Y-%m-%d %H:%M:%S'):
     - datetime: Obiekt daty/godziny.
     """
     return datetime.strptime(ciag_znakow, format)
+
+# data_jako_str = "2024-01-02 20:00:00"
+# data = convert_string_to_date(data_jako_str)
+# print(f"Data jako obiekt daty: {data}")
 
 
 def convert_and_change_format(data, obecny_format='%Y-%m-%d %H:%M:%S', nowy_format='%B %d, %Y, %I:%M:%S %p'):
@@ -56,17 +64,20 @@ def convert_and_change_format(data, obecny_format='%Y-%m-%d %H:%M:%S', nowy_form
 
     return data_w_nowym_formacie
 
+# data = datetime(year=2024, month=1, day=2, hour=20, minute=44, second=0)
+# data_w_nowym_formacie = convert_and_change_format(data)
+# print(f"Data w nowym formacie: {data_w_nowym_formacie}")
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # Przykład konwersji daty na ciąg znaków
-    data = datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0)
-    data_jako_str = convert_date_to_string(data)
-    print(f"Data jako ciąg znaków: {data_jako_str}")
+    # data = datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0)
+    # data_jako_str = convert_date_to_string(data)
+    # print(f"Data jako ciąg znaków: {data_jako_str}")
     # Przykład konwersji ciągu znaków na datę
-    data_jako_str = "2024-01-02 20:00:00"
-    data = convert_string_to_date(data_jako_str)
-    print(f"Data jako obiekt daty: {data}")
+    # data_jako_str = "2024-01-02 20:00:00"
+    # data = convert_string_to_date(data_jako_str)
+    # print(f"Data jako obiekt daty: {data}")
     # Przykład konwersji daty na ciąg znaków i zmiany formatu
-    data = datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0)
-    data_w_nowym_formacie = convert_and_change_format(data)
-    print(f"Data w nowym formacie: {data_w_nowym_formacie}")
+    # data = datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0)
+    # data_w_nowym_formacie = convert_and_change_format(data)
+    # print(f"Data w nowym formacie: {data_w_nowym_formacie}")

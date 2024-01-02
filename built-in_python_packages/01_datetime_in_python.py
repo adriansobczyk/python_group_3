@@ -1,18 +1,24 @@
 '''
 1. Praca z datą i godziną w Pythonie (datetime)
+https://docs.python.org/3.10/library/datetime.html
 '''
+from datetime import datetime, timedelta
 
-from datetime import datetime, timedelta, timezone
 
 # print(datetime.now())
 # print(datetime.now().year)
+# dt_with_tz = datetime(2022, 1, 1, tzinfo=timezone(timedelta(hours=2)))
+
 
 def current_date_time_example():
     """
     Przykład uzyskiwania bieżącej daty i godziny za pomocą datetime.
     """
     obecna_data_i_godzina = datetime.now()
+    print(type(obecna_data_i_godzina))
     return obecna_data_i_godzina
+
+# print(current_date_time_example())
 
 
 def current_date_time_example_seperated(data):
@@ -39,13 +45,47 @@ def current_date_time_example_seperated(data):
 
     return '\n'.join(lista_daty)
 
+# sample_data = datetime.now()
+# print(current_date_time_example_seperated(sample_data))
+
+
+def get_current_date_and_time():
+    sample_time = datetime.now()
+    current_date = sample_time.date()
+    current_time = sample_time.time()
+    return current_date, current_time
+
+# current_date, current_time = get_current_date_and_time()
+# print(f'Bieżąca data: {current_date}, Bieżący czas: {current_time}')
 
 def date_operations_example():
     """
     Przykład operacji na dacie za pomocą datetime.
     """
-    siódmy_dzień_2020 = datetime(year=2020, month=1, day=7, hour=14)
-    print(siódmy_dzień_2020.year)
+    siódmy_dzień_2024 = datetime(year=2024, month=1, day=7, hour=14)
+    return siódmy_dzień_2024.year
+
+# print(date_operations_example())
+
+
+def display_next_day(data):
+    """
+    Funkcja zwracająca następny dzień po podanej dacie.
+
+    Parameters:
+    - data (datetime): Data do sprawdzenia.
+
+    Returns:
+    - datetime: Następny dzień po podanej dacie.
+    """
+    if not isinstance(data, datetime):
+        raise ValueError("Parametr musi być obiektem datetime.")
+
+    # Dodanie 1 dnia do podanej daty
+    nastepny_dzien = data + timedelta(days=1)
+    return nastepny_dzien
+
+# print(display_next_day(datetime.now()))
 
 
 def calculate_interval_between_events(data_zdarzenia1, data_zdarzenia2):
@@ -66,6 +106,11 @@ def calculate_interval_between_events(data_zdarzenia1, data_zdarzenia2):
     interwal = data_zdarzenia2 - data_zdarzenia1
     return interwal
 
+# zdarzenie1 = datetime(year=2024, month=1, day=1, hour=12, minute=0)
+# zdarzenie2 = datetime(year=2024, month=1, day=1, hour=15, minute=40)
+# interwal_czasowy = calculate_interval_between_events(zdarzenie1, zdarzenie2)
+# print(f"Interwał czasowy między zdarzeniem 1 a zdarzeniem 2: {interwal_czasowy}")
+
 
 def display_week_day(data):
     """
@@ -84,6 +129,9 @@ def display_week_day(data):
     nazwa_dnia = data.strftime("%A")
     return nazwa_dnia
 
+# data_do_sprawdzenia = datetime(year=2024, month=1, day=5)
+# dzien_tygodnia = display_week_day(data_do_sprawdzenia)
+# print(f"Dzień tygodnia dla {data_do_sprawdzenia}: {dzien_tygodnia}")
 
 def is_leap_year(rok):
     """
@@ -100,6 +148,10 @@ def is_leap_year(rok):
 
     # Sprawdzenie, czy rok jest przestępny
     return (rok % 4 == 0 and rok % 100 != 0) or (rok % 400 == 0)
+
+# rok_do_sprawdzenia = 2024
+# czy_przestepny = is_leap_year(rok_do_sprawdzenia)
+# print(f"Czy rok {rok_do_sprawdzenia} jest przestępny? {czy_przestepny}")
 
 
 def compare_dates_only(data1, data2):
@@ -121,7 +173,20 @@ def compare_dates_only(data1, data2):
     data1_bez_czasu = datetime(data1.year, data1.month, data1.day)
     data2_bez_czasu = datetime(data2.year, data2.month, data2.day)
 
-    return (data1_bez_czasu - data2_bez_czasu).total_seconds()
+    wynik_porownania = (data1_bez_czasu - data2_bez_czasu).total_seconds()
+
+    if wynik_porownania == 0:
+        print("Daty są równe.")
+    elif wynik_porownania < 0:
+        print("Data 1 jest wcześniejsza niż Data 2.")
+    else:
+        print("Data 1 jest późniejsza niż Data 2.")
+
+    return wynik_porownania
+
+# data1 = datetime(year=2022, month=1, day=1)
+# data2 = datetime(year=2022, month=1, day=1)
+# wynik_porownania = compare_dates_only(data1, data2)
 
 
 def compare_dates_with_hours(data1, data2):
@@ -136,15 +201,22 @@ def compare_dates_with_hours(data1, data2):
     - int: 0, jeśli daty są równe, liczba dodatnia, jeśli data1 jest późniejsza,
            liczba ujemna, jeśli data1 jest wcześniejsza niż data2.
     """
-    if not isinstance(data1, datetime) or not isinstance(data2, datetime):
-        raise ValueError("Oba parametry muszą być obiektami datetime.")
+    # if not isinstance(data1, datetime) or not isinstance(data2, datetime):
+    #     raise ValueError("Oba parametry muszą być obiektami datetime.")
 
     if data1 == data2:
+        print("Daty i godziny są równe.")
         return 0
     elif data1 > data2:
+        print("Data 1 jest późniejsza niż Data 2.")
         return 1
     else:
+        print("Data 1 jest wcześniejsza niż Data 2.")
         return -1
+
+# data1 = datetime(year=2024, month=1, day=1, hour=14, minute=30)
+# data2 = datetime(year=2024, month=1, day=1, hour=12, minute=0)
+# wynik_porownania = compare_dates_with_hours(data1, data2)
 
 
 def check_if_summer_time():
@@ -162,6 +234,7 @@ def check_if_summer_time():
     # Pobierz aktualną datę i godzinę
     obecna_data = datetime.now()
     # obecna_data = datetime(year=2023, month=12, day=1, hour=12)
+
 
     # Określ daty rozpoczęcia i zakończenia czasu letniego w Polsce
     czas_letni_start = datetime(obecna_data.year, 3, 26)  # ostatnia niedziela marca
@@ -184,6 +257,11 @@ def check_if_summer_time():
         'dzien': obecna_data.strftime('%Y-%m-%d'),
     }
 
+# wynik = check_if_summer_time()
+# print("Czas letni:", "Tak" if wynik['czas_letni'] else "Nie")
+# print("Aktualna godzina:", wynik['godzina'])
+# print("Aktualny dzień:", wynik['dzien'])
+
 
 def get_days_from_today(days):
     """
@@ -198,68 +276,59 @@ def get_days_from_today(days):
     try:
         # Dzisiejsza data
         dzisiejsza_data = datetime.now()
-
         # Obliczanie daty za daną liczbę dni
         przyszla_data = dzisiejsza_data + timedelta(days=days)
-
         return przyszla_data
     except Exception as e:
         print(f"Wystąpił błąd: {e}")
         return None
 
+# wynik = get_days_from_today(60)
+# print("Data za 60 dni od dzisiaj:", wynik.strftime('%Y-%m-%d'))
 
-if __name__ == "__main__":
+
+# if __name__ == "__main__":
     # Przykładowe użycie funkcji current_date_time_example
-    print(current_date_time_example())
+    # print(current_date_time_example())
 
     # Przykładowe użycie funkcji current_date_time_example_seperated
-    obiekt_data = datetime(year=2024, month=1, day=1, hour=12, minute=30, second=45)
-    wynik = current_date_time_example_seperated(obiekt_data)
-    print("Rozbita lista daty:\n", wynik)
+    # obiekt_data = datetime(year=2024, month=1, day=1, hour=12, minute=30, second=45)
+    # wynik = current_date_time_example_seperated(obiekt_data)
+    # print("Rozbita lista daty:\n", wynik)
 
+    # Przykładowe użycie funkcji get_current_date_and_time
+    # current_date, current_time = get_current_date_and_time()
+    # print(f'Bieżąca data: {current_date}, Bieżący czas: {current_time}')
+    
     # Przykładowe użycie funkcji date_operations_example
-    date_operations_example()
+    # date_operations_example()
 
     # Przykładowe użycie funkcji calculate_interval_between_events
-    zdarzenie1 = datetime(year=2022, month=1, day=1, hour=12, minute=0)
-    zdarzenie2 = datetime(year=2022, month=1, day=1, hour=15, minute=30)
+    # zdarzenie1 = datetime(year=2022, month=1, day=1, hour=12, minute=0)
+    # zdarzenie2 = datetime(year=2022, month=1, day=1, hour=15, minute=30)
 
-    interwal_czasowy = calculate_interval_between_events(zdarzenie1, zdarzenie2)
-    print(f"Interwał czasowy między zdarzeniem 1 a zdarzeniem 2: {interwal_czasowy}")
+    # interwal_czasowy = calculate_interval_between_events(zdarzenie1, zdarzenie2)
+    # print(f"Interwał czasowy między zdarzeniem 1 a zdarzeniem 2: {interwal_czasowy}")
 
     # Przykładowe użycie funkcji display_week_day
-    data_do_sprawdzenia = datetime(year=2022, month=1, day=1)
-    dzien_tygodnia = display_week_day(data_do_sprawdzenia)
-    print(f"Dzień tygodnia dla {data_do_sprawdzenia}: {dzien_tygodnia}")
+    # data_do_sprawdzenia = datetime(year=2022, month=1, day=1)
+    # dzien_tygodnia = display_week_day(data_do_sprawdzenia)
+    # print(f"Dzień tygodnia dla {data_do_sprawdzenia}: {dzien_tygodnia}")
 
     # Przykładowe użycie funkcji is_leap_year
-    rok_do_sprawdzenia = 2024
-    czy_przestepny = is_leap_year(rok_do_sprawdzenia)
-    print(f"Czy rok {rok_do_sprawdzenia} jest przestępny? {czy_przestepny}")
+    # rok_do_sprawdzenia = 2024
+    # czy_przestepny = is_leap_year(rok_do_sprawdzenia)
+    # print(f"Czy rok {rok_do_sprawdzenia} jest przestępny? {czy_przestepny}")
 
     # Przykładowe użycie funkcji porównującej daty bez godzin, minut i sekund
-    data1 = datetime(year=2022, month=1, day=1)
-    data2 = datetime(year=2022, month=1, day=1)
-    wynik_porownania = compare_dates_only(data1, data2)
-    if wynik_porownania == 0:
-        print("Daty są równe.")
-    elif wynik_porownania < 0:
-        print("Data 1 jest wcześniejsza niż Data 2.")
-    else:
-        print("Data 1 jest późniejsza niż Data 2.")
+    # data1 = datetime(year=2022, month=1, day=1)
+    # data2 = datetime(year=2022, month=1, day=1)
+    # wynik_porownania = compare_dates_only(data1, data2)
 
     # Przykładowe użycie funkcji compare_dates
-    data_1 = datetime(year=2022, month=1, day=1, hour=12, minute=30)
-    data_2 = datetime(year=2022, month=1, day=1, hour=10, minute=15)
-
+    # data_1 = datetime(year=2022, month=1, day=1, hour=12, minute=30)
+    # data_2 = datetime(year=2022, month=1, day=1, hour=10, minute=15)
     # wynik_porownania = compare_dates_with_hours(data_1, data_2)
-
-    # if wynik_porownania == 0:
-    #     print("Daty są równe.")
-    # elif wynik_porownania > 0:
-    #     print(f"{data_1} jest późniejsza niż {data_2}.")
-    # else:
-    #     print(f"{data_1} jest wcześniejsza niż {data_2}.")
 
     # Przykładowe użycie funkcji current_datetime_in_my_timezone
     # wynik = check_if_summer_time()

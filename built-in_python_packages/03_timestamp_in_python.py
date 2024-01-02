@@ -14,6 +14,9 @@ def timestamp_example():
     timestamp = datetime.timestamp(datetime.now())
     return timestamp
 
+# timestamp = timestamp_example()
+# print(f"Utworzony timestamp: {timestamp}")
+
 
 def timestamp_to_datetime(timestamp):
     """
@@ -27,6 +30,10 @@ def timestamp_to_datetime(timestamp):
     """
     data_i_czas = datetime.fromtimestamp(timestamp)
     return data_i_czas
+
+# timestamp = 1704223875.93936
+# data_i_czas = timestamp_to_datetime(timestamp)
+# print(f"Data i czas: {data_i_czas}")
 
 
 def datetime_to_timestamp(data_i_czas):
@@ -42,14 +49,17 @@ def datetime_to_timestamp(data_i_czas):
     timestamp = datetime.timestamp(data_i_czas)
     return timestamp
 
+timestamp = datetime_to_timestamp(data_i_czas=datetime(year=2024, month=1, day=2, hour=20, minute=36, second=0))
+print(f"Timestamp: {timestamp}")
 
-if __name__ == "__main__":
+
+# if __name__ == "__main__":
     # Przykład tworzenia timestampu
-    timestamp = timestamp_example()
-    print(f"Utworzony timestamp: {timestamp}")
+    # timestamp = timestamp_example()
+    # print(f"Utworzony timestamp: {timestamp}")
     # Zamiana timestampu na datę i czas
-    data_i_czas = timestamp_to_datetime(timestamp)
-    print(f"Data i czas: {data_i_czas}")
+    # data_i_czas = timestamp_to_datetime(timestamp)
+    # print(f"Data i czas: {data_i_czas}")
     # Zamiana daty i czasu na timestamp
-    timestamp = datetime_to_timestamp(data_i_czas=datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0))
-    print(f"Timestamp: {timestamp}")
+    # timestamp = datetime_to_timestamp(data_i_czas=datetime(year=2024, month=1, day=2, hour=20, minute=0, second=0))
+    # print(f"Timestamp: {timestamp}")
