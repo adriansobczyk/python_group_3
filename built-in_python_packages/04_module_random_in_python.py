@@ -4,6 +4,7 @@
 
 from random import randrange, random, randint, choice, choices, sample, shuffle 
 
+
 def random_example():
     """
     Przykłady generowania liczb losowych z zakresu lewostronnie domkniętego [0, 1).
@@ -38,7 +39,7 @@ def choices_example():
     """
     Przykłady generowania liczb losowych.
     """
-    liczby_losowe = choices([1, 2, 3, 4, 5, 6], k=2) # k - ile liczb wylosować
+    liczby_losowe = choices([1, 2, 3, 4, 5, 6], k=3) # k - ile liczb wylosować
     return liczby_losowe
 
 # print(choices_example())
@@ -99,10 +100,9 @@ def get_list_of_numbers(min_val=1, max_val=15, quantity=4):
     
     return numbers
 
-# print(get_list_of_numbers(1, 12, 4))
+# print(get_list_of_numbers())
 
-
-def generate_random_professions(input_dict, quantity=9):
+def generate_random_professions(input_dict, quantity=2):
     if len(input_dict) < quantity:
         raise ValueError("Liczba wybranych kluczy nie może być większa niż liczba dostępnych kluczy w słowniku.")
     # Losowo wybierz określoną ilość kluczy
@@ -110,8 +110,8 @@ def generate_random_professions(input_dict, quantity=9):
     # Losowo wybierz określoną ilość kluczy z unikalnymi wartościami
     unique_keys = sample(list(input_dict.keys()), k=quantity)
     # Twórz listę par klucz-wartość z wybranymi kluczami i losowymi profesjami
-    result_list = [(key, input_dict[key]) for key in selected_keys]
-    return selected_keys
+    result_list = [(key, input_dict[key]) for key in unique_keys]
+    return unique_keys
 
 # input_data = {
 #     "Anna": "Inżynier",

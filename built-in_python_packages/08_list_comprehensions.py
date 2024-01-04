@@ -1,5 +1,6 @@
 '''
 8. List comprehensions
+[wyrażenie for element in sekwencja if warunek]
 '''
 
 def list_comprehension():
@@ -55,3 +56,30 @@ def create_dictionary_with_list_comprehension(keys, values):
 # keys_list = ['name', 'age', 'city']
 # values_list = ['John', 25, 'New York']
 # result_dict = print(create_dictionary_with_list_comprehension(keys_list, values_list))
+
+
+def display_birthday_date():
+    '''
+    Przykład użycia słownika do przechowywania dat urodzin.
+    '''
+    slownik_daty = {
+        "Anna": "1990-05-15",
+        "Jan": "1985-08-20",
+        "Maria": "1995-02-10",
+        "Adam": "1992-11-30",
+        "Ewa": "1988-04-25",
+    }
+
+    # Pozwól użytkownikowi wprowadzić imię
+    wprowadzone_imie = input("Podaj imię: ")
+
+    # Sprawdź, czy imię istnieje w słowniku
+    if wprowadzone_imie in slownik_daty:
+        # Pobierz i wyświetl datę dla wprowadzonego imienia
+        wynik = slownik_daty[wprowadzone_imie]
+        return wynik 
+    else:
+        print("Brak danych dla podanego imienia.")
+
+# Wywołaj funkcję obsługi słownika
+print(display_birthday_date())
