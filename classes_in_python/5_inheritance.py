@@ -83,8 +83,20 @@ class Lecturer(Person):
         print(f"{self.imie} {self.nazwisko} wyklada przedmiot: {self.przedmiot}")
 
 
+class College:
+    def __init__(self, lecturer, student):
+        self.lecturer = lecturer
+        self.student = student
+
+    def wyklad(self):
+        print(f"Wykładowca {self.lecturer.imie} {self.lecturer.nazwisko} wykłada przedmiot {self.lecturer.przedmiot} studentowi {self.student.imie} {self.student.nazwisko} z numerem indeksu {self.student.numer_indeksu}")
+
 # Przykład użycia:
-student1 = Student("Jan", "Kowalski", "12345")
-student1.studiuj()
-wykladowca1 = Lecturer("Profesor", "Nowak", "Informatyka")
-wykladowca1.wykladaj()
+# student1 = Student("Jan", "Kowalski", "12345")
+# student1.studiuj()
+# wykladowca1 = Lecturer("Profesor", "Nowak", "Informatyka")
+# wykladowca1.wykladaj()
+# lecturer = Lecturer("Jan", "Kowalski", "Matematyka")
+# student = Student("Anna", "Nowak", 123456)
+# college = College(lecturer, student)
+# college.wyklad()
