@@ -11,8 +11,8 @@ def sample_add_function(a, b):
         print(a + b)
     except Exception:
         print("Nie można dodać tych dwóch liczb")
-    finally:
-        print("Koniec działania funkcji")
+    # finally:
+    #     print("Koniec działania funkcji")
 
 # sample_add_function(1, 'abc')
 
@@ -25,10 +25,10 @@ class MyException(Exception):
     def __str__(self):
         return f"Mój niestandardowy wyjątek: {self.message}"
 
-def sample_add_function(a, b):
-    if not isinstance(a, int) or not isinstance(b, int):
-        raise MyException("Nie można dodać tych dwóch liczb")
-    print(a + b)
+# def sample_add_function(a, b):
+#     if not isinstance(a, int) or not isinstance(b, int):
+#         raise MyException("Nie można dodać tych dwóch liczb")
+#     print(a + b)
 
 def test_function(a, b):
     try:
@@ -108,12 +108,6 @@ class MoWyjatek(Exception):
         self.message = message
         super().__init__(self.message)
 
-# Funkcja używająca wyjątku
-def moja_funkcja(tekst):
-    if not tekst:
-        raise MoWyjatek("Tekst nie może być pusty!")
-    else:
-        print("Podany tekst:", tekst)
 
 # Funkcja używająca wyjątku
 def moja_funkcja(tekst):
@@ -164,7 +158,7 @@ class AktualnyCzas:
         return czas_w_strefie
 
 # Przykładowe użycie
-# miasto = "Europe/Warsaw"  # Strefa czasowa dla Warszawy
+# miasto = "America/Santiago"  # Strefa czasowa dla Warszawy
 # czasownik = AktualnyCzas(miasto)
 # aktualny_czas = czasownik.pobierz_aktualny_czas()
 # print(f"Aktualny czas w {miasto}: {aktualny_czas}")

@@ -238,6 +238,7 @@ class Employee:
         contact = {
             "id": self.current_id,
             "name": name,
+            "phone": phone,
             "email": email,
         }
         self.contacts.append(contact)
@@ -251,13 +252,13 @@ class Employee:
         return False
 
 
-employee_obj = Employee()
-employee_obj.add_empployee("Jan Kowalski", "123456789", "jan.kowalski@com")
-employee_obj.add_empployee("Anna Nowak", "987654321", "anna.nowak@com")
-employee_obj.add_empployee("Adam Nowak", "987654321", "adam.nowak@com")
-print(employee_obj.display_person())
-employee_obj.remove_employee(1)
-print(employee_obj.display_person())
+# employee_obj = Employee()
+# employee_obj.add_empployee("Jan Kowalski", "123456789", "jan.kowalski@com")
+# employee_obj.add_empployee("Anna Nowak", "987654321", "anna.nowak@com")
+# employee_obj.add_empployee("Adam Nowak", "987654321", "adam.nowak@com")
+# print(employee_obj.display_person())
+# employee_obj.remove_employee(1)
+# print(employee_obj.display_person())
 
 # MRO
         
@@ -274,6 +275,7 @@ class D(B, C):
     pass
 
 # print(D.mro())
+# print(type(D))
 
 
 # Kontenery tworzone przy użyciu dziedziczenia
@@ -380,16 +382,15 @@ class Bohater:
         print(f"Jestem {self.imie} o sile {self.sila}.")
 
 # Klasa Wojownika dziedziczaca po Bohaterze
-class WojownikDwa(Bohater):
+class Wojownik(Bohater):
     def __init__(self, imie, sila):
-        super().__init__("Wojownik-" + imie, sila * 2)
-        # super().__init__(self.__class__.__name__ + "-" + imie, sila * 2)
-
+        # super().__init__("Wojownik-" + imie, sila * 2)
+        super().__init__(self.__class__.__name__ + "-" + imie, sila * 2)
 
 # bohater = Bohater("Artur", 10)
 # bohater.przedstaw_sie()
 
-# wojownik = WojownikDwa("Jan", 15)
+# wojownik = Wojownik("Jan", 15)
 # wojownik.przedstaw_sie()
 
 
@@ -405,7 +406,7 @@ class CustomList(UserList):
 
     def count_elements(self):
         return f"Liczba elementów w CustomList: {len(self.data)}"
-    
+
     def append(self, item):
         return ValueError("Nie można dodawać elementów do klasy CustomList")
 
@@ -444,12 +445,9 @@ class CustomString(UserString):
         return f"Liczba znaków w CustomString: {len(self.data)}"
 
 # Przykład użycia naszych niestandardowych kontenerów
-custom_list = CustomList([1, 2, 3, 4, 5])
+# custom_list = CustomList([1, 2, 3, 4, 5])
+# custom_dict = CustomDict({'a': 1, 'b': 2, 'c': 3})
 
-custom_dict = CustomDict({'a': 1, 'b': 2, 'c': 3})
-
-key_for_value = custom_dict.find_key(2)
-value_for_key = custom_dict.find_value('b')
 
 custom_string = CustomString("Hello, World!")
 
@@ -464,6 +462,6 @@ custom_string = CustomString("Hello, World!")
 # print(custom_dict.find_key(2))
 # print(custom_dict.find_value('a'))
 
-# print(custom_string.custom_method())
-# print(custom_string.count_characters())
+print(custom_string.custom_method())
+print(custom_string.count_characters())
 

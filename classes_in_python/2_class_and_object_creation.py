@@ -2,8 +2,6 @@
 2. Tworzenie klasy
 '''
 
-
-
 class Receipt:
     name = "Ciasto kruche"
     ingredients = ["mąka", "jajka", "masło", "cukier puder", "sól"]

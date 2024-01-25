@@ -58,7 +58,6 @@ class Dog:
 # for animal in (cat1, dog1):
 #     animal.make_sound()
 #     animal.info()
-#     animal.make_sound()
 
 
 # Przykład 3
