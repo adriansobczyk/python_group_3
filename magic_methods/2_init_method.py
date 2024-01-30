@@ -22,12 +22,17 @@ class Person:
 
 # Przykład 2 - wartości domyślne
 class Person:
-    def __init__(self, name="Anonymous", age=0):
+    def __init__(
+            self, 
+            name="Anonymous", 
+            age=0
+            ):
         self.name = name
         self.age = age
 
 # Użycie domyślnych wartości argumentów
-anonymous_person = Person()
+# anonymous_person = Person()
+# print(anonymous_person.name)  # Wyświetli "Anonymous"
 
 
 # Przykład 3 - init a dziedzieczenie
@@ -62,4 +67,5 @@ class User:
         return email
 
 # Utworzenie obiektu klasy User z walidacją danych
-# user = User("john", "john@example.com")
+# user = User("john123", "john")
+# print(user)

@@ -11,7 +11,7 @@ class MyList:
         return len(self.elements)
 
 # Utworzenie obiektu klasy MyList
-my_list = MyList([1, 2, 3, 4, 5])
+# my_list = MyList([1, 2, 3, 4, 5])
 
 # Wywołanie funkcji len() na obiekcie my_list
 # print(len(my_list))  # Wyświetli: 5
@@ -35,7 +35,7 @@ class MyContainer:
 # kontener.dodaj_element(3)
 
 # Wywołanie funkcji len() na obiekcie kontener
-# print(len(kontener))  # Wyświetli: 3
+# print('Custom len: ', len(kontener))  # Wyświetli: 3
 
 
 # Przykład 3 - metoda __len__ w klasie Sentence
@@ -51,14 +51,17 @@ class Sentence:
 
 # Utworzenie obiektu klasy Sentence
 # sentence = Sentence("To jest przykładowe zdanie do testowania metody __len__.")
-
 # Wywołanie funkcji len() na obiekcie sentence
 # print(len(sentence))  # Wyświetli: 8
 
 
 # Przykład 4 - metoda __len__ w klasie SampleText
 class SampleText:
-    def __init__(self, tekst, excluded_words=[]):
+    def __init__(
+            self, 
+            tekst, 
+            excluded_words=[]
+            ):
         self.tekst = tekst
         self.excluded_words = excluded_words
 

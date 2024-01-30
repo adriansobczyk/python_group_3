@@ -12,13 +12,13 @@
 # __init__ - metoda wywoływana podczas tworzenia nowego obiektu
 # __str__ - metoda wywoływana podczas konwersji obiektu na napis
 
-# __add__ - metoda wywoływana podczas dodawania dwóch obiektów
-# __sub__ - metoda wywoływana podczas odejmowania dwóch obiektów
-# __mul__ - metoda wywoływana podczas mnożenia dwóch obiektów
-# __truediv__ - metoda wywoływana podczas dzielenia dwóch obiektów
+# __add__ - metoda wywoływana podczas dodawania dwóch obiektów +
+# __sub__ - metoda wywoływana podczas odejmowania dwóch obiektów -
+# __mul__ - metoda wywoływana podczas mnożenia dwóch obiektów *
+# __truediv__ - metoda wywoływana podczas dzielenia dwóch obiektów /
 # __floordiv__ - metoda wywoływana podczas dzielenia całkowitoliczbowego dwóch obiektów
-# __mod__ - metoda wywoływana podczas dzielenia modulo dwóch obiektów
-# __pow__ - metoda wywoływana podczas potęgowania dwóch obiektów
+# __mod__ - metoda wywoływana podczas dzielenia modulo dwóch obiektów %
+# __pow__ - metoda wywoływana podczas potęgowania dwóch obiektów **
 
 # __eq__ - metoda wywoływana podczas porównywania dwóch obiektów za pomocą operatora ==
 # __ne__ - metoda wywoływana podczas porównywania dwóch obiektów za pomocą operatora !=

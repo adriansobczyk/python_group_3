@@ -31,12 +31,12 @@ class Multiplier:
         return self.multiplier * value
 
 # Tworzymy obiekt funktora, który mnoży przekazaną wartość przez 3
-# multiply_by_three = Multiplier(3)
+multiply_by_three = Multiplier(3)
 
 # Wywołujemy obiekt funktora, działając na nim jak na funkcji
-# result = multiply_by_three(5)
-# print(result)  # Wynik: 15
+result = multiply_by_three(5)
+print(result)  # Wynik: 15
 
 # Możemy wywoływać obiekt funktora wielokrotnie z różnymi wartościami
-# result = multiply_by_three(8)
-# print(result)  # Wynik: 24
+result = multiply_by_three(8)
+print(result)  # Wynik: 24

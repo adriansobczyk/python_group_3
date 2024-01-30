@@ -58,7 +58,7 @@ class MyList:
         self.elements.append(value)
 
 # Utworzenie obiektu klasy MyList
-my_list = MyList()
+# my_list = MyList()
 
 # Przypisanie wartości do elementów za pomocą metody __setitem__()
 # my_list.append(1)
