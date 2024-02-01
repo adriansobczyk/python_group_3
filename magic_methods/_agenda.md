@@ -32,46 +32,33 @@
 - Omówienie koncepcji funktorów i ich implementacji za pomocą metody `__call__`.
 - Przedstawienie przykładu z klasą `Adder` ilustrującą wywoływanie obiektów jako funkcji.
 
+## Lekcja 2
+
 ### 7. Tworzenie niestandardowych Menedżerów Kontekstu
 
 - Wyjaśnienie roli menedżerów kontekstu w zarządzaniu zasobami.
 - Przedstawienie przykładu z klasą `Session` pokazującą tworzenie niestandardowych menedżerów kontekstu.
 
-## Lekcja 2
-
 ### 8. **Tworzenie obiektu iteratora/generatora**
 
 - Omówienie protokołu iteratora.
 - Wyjaśnienie metod `__iter__()` i `__next__()`.
-
-### **9. Tworzenie osobnego obiektu iteratora**
-
-- Przykładowa implementacja klasy iteratora.
-- Wykorzystanie dwóch klas: `Iterable` i `CustomIterator`.
-- Praktyczne zastosowanie iteratora w pętli `for`.
-
-### **10. Użycie generatorów**
-
 - Omówienie generatorów jako efektywnego sposobu tworzenia iteratorów.
 - Przykłady wykorzystania funkcji generującej z użyciem słowa kluczowego `yield`.
 
-### **11. Enkapsulacja w Pythonie**
+### **9. Enkapsulacja w Pythonie**
 
 - Wyjaśnienie różnic między publicznymi, chronionymi i prywatnymi atrybutami/metodami.
 - Przedstawienie konwencji nazewnictwa dla enkapsulacji.
 - Praktyczne przykłady z wykorzystaniem klas i metod.
+- Czym jest Getter/setter
 
-### **12. Getter/setter**
-
-- Wyjaśnienie mechanizmu getterów i setterów.
-- Przykłady użycia dekoratorów `@property`, `@<property_name>.setter`.
-
-### **13. Zastępowanie operatorów matematycznych**
+### **10. Zastępowanie operatorów matematycznych**
 
 - Przegląd metod specjalnych do zastępowania operatorów matematycznych.
 - Praktyczne przykłady definiowania własnych zachowań dla operatorów matematycznych.
 
-### **14. Nadpisywanie operacji porównywania**
+### **11. Nadpisywanie operacji porównywania**
 
 - Przedstawienie metod specjalnych związanych z operacjami porównywania.
 - Przykłady implementacji metod porównujących dla własnych klas.
