@@ -1,0 +1,37 @@
+@startuml
+
+class Person {
+    - name: str
+    - surname: str
+    - age: int
+    + __init__(name: str, surname: str, age: int)
+    + get_full_name(): str
+    + get_age(): int
+}
+
+class Student {
+    - student_id: int
+    + __init__(name: str, surname: str, age: int, student_id: int)
+    + get_student_id(): int
+}
+
+class Teacher {
+    - teacher_id: int
+    + __init__(name: str, surname: str, age: int, teacher_id: int)
+    + get_teacher_id(): int
+}
+
+class School {
+    - name: str
+    - students: list
+    - teachers: list
+    + __init__(name: str, students: list, teachers: list)
+    + get_name(): str
+    + get_students(): list
+    + get_teachers(): list
+}
+
+Person <|-- Student
+Person <|-- Teacher
+
+@enduml
