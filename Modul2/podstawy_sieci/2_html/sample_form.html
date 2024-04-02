@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Opis strony">
+    <meta name="keywords" content="słowa kluczowe">
+    <meta name="author" content="Autor">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formularz</h1>
+    <form method="POST" name="student" action='/students'>
+        <label for="firstname"> Enter your name
+            </br>
+            <input type="text" id="firstname" name="firstname" size="45"/>
+        </label>
+        </br></br>
+        <label for="lastname"> Enter your surname
+            </br>
+            <input type="text" id="lastname" name="lastname" size="45"/>
+        </label>
+        <br></br>
+        <textarea name="comment" rows="5" cols="40">Enter your comment here...</textarea>
+        </br></br>
+        <input type="checkbox" name="terms"/> <span>I accept the terms and conditions</span>
+        </br></br>
+        <label for="age"> Enter your age
+            </br>
+            <input type="number" id="age" name="age" min="18" max="100"/>
+        </label>
+        </br></br>
+        <input type="file" name="file" multiple/>
+        </br></br>
+        <input type="radio" checked name="job"/> <span>University student</span>
+        </br>
+        <input type="radio" name="job"/> <span>Other</span>
+        </br></br>
+        <button type="submit"> Submit</button>
+        <button type="reset"> Reset</button>
+    </form>
+
+    <h1>Formularz logowania</h1>
+    <form method="POST" name="login" action='/login'>
+        <label for="login"> Enter your login
+            </br>
+            <input type="text" id="login" name="login" size="45"/>
+        </label>
+        </br></br>
+        <label for="password"> Enter your password
+            </br>
+            <input type="password" id="password" name="password" size="45"/>
+        </label>
+        </br></br>
+        <button type="submit"> Submit</button>
+        <button type="reset"> Reset</button>
+    </form>
+
+    <h1>Wyszukiwarka</h1>
+    <form method="GET" name="search" action='/search'>
+        <label for="search"> Enter your search phrase
+            </br>
+            <input type="text" id="search" name="search" size="45"/>
+        </label>
+        </br></br>
+        <button type="submit"> Search</button>
+        <button type="reset" hidden> Reset</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+a {
+    color: red;
+    text-decoration: none;
+}
+
+h1 {
+    color: blue;
+    font-size: 4rem;
+}
+
+li {
+    list-style:square;
+}
