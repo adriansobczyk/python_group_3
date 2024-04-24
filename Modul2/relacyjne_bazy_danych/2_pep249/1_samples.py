@@ -53,7 +53,7 @@ def fetch_all_records(cursor):
 
 
 # Przykładowe wywołanie funkcji
-conn = connect_to_database('example.db')
+conn = connect_to_database('example123.db')
 cursor = create_cursor(conn)
 # create_table(cursor, 'example_table', 'id INTEGER PRIMARY KEY, name TEXT')
 # insert_data(cursor, 'example_table', '1, "Alice"')
