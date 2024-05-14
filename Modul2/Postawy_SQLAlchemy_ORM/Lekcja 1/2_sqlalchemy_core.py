@@ -13,6 +13,10 @@ load_dotenv()
 
 # Tworzenie silnika bazy danych postgreSQL
 DATABASE_URL = f'postgresql://{os.getenv("POSTGRES_USERNAME")}:{os.getenv("POSTGRES_PASSWORD")}@localhost/postgres'
+
+print(os.getenv("POSTGRES_USERNAME"))
+print(os.getenv("POSTGRES_PASSWORD"))
+
 engine = create_engine(DATABASE_URL)
 
 # Tworzenie obiektu MetaData do zarządzania tabelami
