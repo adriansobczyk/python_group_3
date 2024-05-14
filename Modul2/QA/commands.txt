@@ -1,0 +1,16 @@
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+
+docker exec -it some-postgres psql -U postgres
+
+\l
+
+psql -U username -d database_name
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+\dt
